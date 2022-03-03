@@ -1,0 +1,44 @@
+.accordion {
+    margin: 1rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Items are evenly distributed */
+    cursor: pointer;
+    background-color: rgb(65, 209, 219);
+    border-radius: 20px;
+}
+
+.title::after {
+    content: "▶";
+    transform: rotate(0);
+    transform-origin: center;
+    transition: 0.2s transform ease;
+}
+
+.accordion[open] > .title:after{
+    transform: rotate(90deg);
+    transition: 0.45s transform ease;
+}
+
+.accordion[open] > .title {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.title:hover {
+    background-color: #409aac;
+}
+
+.title,
+.content {
+    padding: 1rem;
+}
+
+.content {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #39b9d2;
+}
